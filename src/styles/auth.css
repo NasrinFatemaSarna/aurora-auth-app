@@ -1,0 +1,257 @@
+/* THEME VARIABLES (dark default) */
+:root{
+  --bg: #0b0f19;
+  --card: rgba(255,255,255,0.06);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.68);
+  --stroke: rgba(255,255,255,0.14);
+  --focus: rgba(124,92,255,0.25);
+  --grad1: #7c5cff;
+  --grad2: #00d3ff;
+}
+
+/* Light theme override */
+:root[data-theme="light"]{
+  --bg: #f6f7fb;
+  --card: rgba(0,0,0,0.04);
+  --text: rgba(0,0,0,0.88);
+  --muted: rgba(0,0,0,0.55);
+  --stroke: rgba(0,0,0,0.12);
+  --focus: rgba(124,92,255,0.18);
+}
+
+.authPage{
+  min-height: calc(100vh - 64px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 20px;
+  background: var(--bg);
+}
+
+.authWrap{
+  width: min(480px, 95vw);
+}
+
+.authCard{
+  border-radius: 20px;
+  padding: 26px;
+  border: 1px solid var(--stroke);
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+}
+
+.authHeaderRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.authTitle{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.authSub{
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.themeBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.06);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tabs{
+  display:flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tab{
+  flex:1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.04);
+  cursor:pointer;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+.tabActive{
+  background: linear-gradient(135deg, var(--grad1), var(--grad2));
+  border: none;
+  color: white;
+}
+
+.socialRow{
+  display:flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.btnSocial{
+  flex:1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.04);
+  cursor:pointer;
+  color: var(--text);
+}
+.btnSocial:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.divider{
+  text-align:center;
+  margin: 14px 0;
+  position:relative;
+}
+.divider span{
+  padding: 0 10px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--bg);
+}
+.divider::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:50%;
+  height:1px;
+  background: var(--stroke);
+  z-index:-1;
+}
+
+.form{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+
+/* Floating label fields */
+.floatField{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+}
+
+.floatInput{
+  width:100%;
+  padding: 14px 44px 14px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  outline:none;
+  transition: 0.2s ease;
+}
+
+.floatInput:focus{
+  border-color: var(--grad1);
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
+/* label animation */
+.floatLabel{
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: var(--muted);
+  pointer-events: none;
+  transition: 0.15s ease;
+  background: transparent;
+}
+
+/* move label up when focused OR has value */
+.floatInput:focus + .floatLabel,
+.floatInput:not(:placeholder-shown) + .floatLabel{
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  padding: 0 6px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Eye button */
+.eyeBtn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Hint */
+.hint{
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.hintOk{
+  color: #2ee59d;
+}
+
+.btnPrimary{
+  margin-top: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--grad1), var(--grad2));
+  color: white;
+  font-weight: 700;
+  cursor:pointer;
+  transition: 0.2s ease;
+}
+.btnPrimary:hover{
+  transform: translateY(-2px);
+}
+.btnFull{
+  width:100%;
+}
+
+.authFooter{
+  margin-top: 14px;
+  text-align:center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.linkBtn{
+  border:none;
+  background:none;
+  color: var(--grad2);
+  cursor:pointer;
+}
+.linkBtn:hover{
+  text-decoration: underline;
+}
+
+/* Autofill fix */
+input:-webkit-autofill{
+  -webkit-text-fill-color: var(--text) !important;
+  box-shadow: 0 0 0px 1000px rgba(255,255,255,0.03) inset !important;
+}
+
+/* Responsive */
+@media (max-width: 520px){
+  .authCard{ padding: 20px; }
+  .socialRow{ flex-direction: column; }
+}

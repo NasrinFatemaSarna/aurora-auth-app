@@ -1,0 +1,63 @@
+.homeHeader{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.homeGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.panel{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+}
+
+.panelTitle{ font-weight: 800; font-size: 18px; }
+.panelSub{ color: var(--muted); margin-top: 6px; margin-bottom: 12px; }
+
+.kv{ display:grid; gap: 10px; }
+.kvRow{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+.kvKey{ color: var(--muted); font-size: 13px; }
+.kvVal{ font-size: 13px; }
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+.checkList{
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px){
+  .homeGrid{ grid-template-columns: 1fr; }
+}
+.homeTitleRow{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.themeBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke, rgba(255,255,255,0.14));
+  background: rgba(255,255,255,0.06);
+  cursor: pointer;
+  font-size: 16px;
+}
